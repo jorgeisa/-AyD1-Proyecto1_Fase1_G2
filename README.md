@@ -6,7 +6,7 @@
 
 <p align="center"><img src="./img/USAC_logo.png" width="300" height="300"/></p>
 
-### <h2> **Grupo 4** </h2> 
+### <h2> **Grupo 2** </h2> 
 | Carné     | Nombre                        |
 |-----------|-------------------------------|
 | 201807316 | Jorge Isaac Xicol Vicente     |
