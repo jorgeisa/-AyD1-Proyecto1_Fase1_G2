@@ -97,22 +97,3 @@ _Es un sistema de gestion de base de datos relacional de open source respaldado 
 _Las tecnologias extras a utilizar, nos ayudaran a tener una mejor organizacion y aparencia_
 ##### Bootstrap: 
 _Es un framework orientado en css que utilizaremos para darle un mejor diseno a la frontend, esto tambien nos ayuda a que 
-nuestra aplicacion web se adapte a cualquier dispositivo_
-
-
-# Requerimientos no funcionales
-
-_Lista de requerimientos no funcionales del proyecto_
-
-|NO. | Descripcion|
-|-----|------------|
-|RNF01 | El sistema deberá estar disponible los 365 dias al año, las 24 horas al dia|
-|RNF02 | La aplicacion debera ser adaptable a cualquier dispositivo y debe ser responsiva. Los exploradores disponibles para esta aplicacion son: Google Chrome, safari, Edge, Mozilla Firefox, Opera|
-|RNF03 | Debe tener alta disponibilidad en la base de datos y gran capacidad de almacenaje|
-|RNF04 | La aplicacion debe tener alta disponibilidad al acceso de la misma|
-|RNF05 | 
-
-
-# Diagrama Entidad - Relacion
-
-_El diagrama Entidad - Relacion a utilizar en la creacion de nuestro proyeto, donde definiremos la fase conceptual de nuestra base de datos, esta consta de todas las entidades abtraidas del enunciado, los atributos clave indentificados y las diversas relaciones entre las mismas_
