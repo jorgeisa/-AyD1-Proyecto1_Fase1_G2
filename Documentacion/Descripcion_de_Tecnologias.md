@@ -96,4 +96,7 @@ _Es un sistema de gestion de base de datos relacional de open source respaldado 
 ### Herramientas Extras
 _Las tecnologias extras a utilizar, nos ayudaran a tener una mejor organizacion y aparencia_
 ##### Bootstrap: 
+<<<<<<< Updated upstream
 _Es un framework orientado en css que utilizaremos para darle un mejor diseno a la frontend, esto tambien nos ayuda a que 
+nuestra aplicacion web se adapte a cualquier dispositivo y tenga una mejor aparencia_
+
