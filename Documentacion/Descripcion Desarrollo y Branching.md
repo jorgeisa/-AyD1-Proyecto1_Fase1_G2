@@ -1,0 +1,5 @@
+-Responde al cambio (clase 1-Pag24)
+-Puede manejar problemas complejos y adaptativos Clase 3 pag 3
+-no somos menos de 3 miembros y tampoco somos mas de 9, con lo cual no puede existir poca habilidad para cumplir la meta.
+-El product Backlog evoluciona y crece mientras el producto cambia.
+-Scrum diario via meet
