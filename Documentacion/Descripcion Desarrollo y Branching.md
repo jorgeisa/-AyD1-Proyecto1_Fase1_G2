@@ -26,6 +26,13 @@ Para ser mas especificos se trabajo la metodología scrum, la cual permite un tr
 *  Scrum es ideal para grupos que tienen entre tres y nueve miembros, **siendo nuestro grupo de cuatro integrantes**, scrum es ideal.
 *  El aspecto mas importante es que Scrum **responde al cambio**, este proyecto es manejado por fases, por lo que el cambio sera dado constantemente.
 
+### Sprints
+Los sprints fueron realizados con la herramienta "Trello" para llevar control de las tareas realizadas conforme el tiempo.
+![](../img/Metodologia/Metodologia_Trello.PNG)
+**** 
+**** 
+
+
 # Descripcion de Modelo de Branching
 ## _Modelo Git Flow_
 Git flow es un flujo de trabajo basado en Git, con este modelo se tiene un mejor control y organizacion en el proceso de integración continua. 
