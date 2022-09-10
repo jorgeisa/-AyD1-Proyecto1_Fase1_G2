@@ -10,7 +10,7 @@
 | Carné     | Nombre                        |
 |-----------|-------------------------------|
 | 201807316 | Jorge Isaac Xicol Vicente     |
-| 201602489 | Josué Alfredo Gonzáles Caal   |
+| 201602489 | Josué Alfredo González Caal   |
 | 201504443 | Virginia Sarai Gutierrez Depaz|
 | 201801210 | Rodolfo Alexander Avalos Soto |
 
