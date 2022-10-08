@@ -10,7 +10,7 @@ router.post('/newAuto', (req,res)=>{
     `
     mysqlConnection.query(query, [placa, auto_usuario, marca, precio, modelo],(err,rows,fields)=>{
         if (!err) {    
-            res.send({"estado": rows.affectedRows})
+            res.json({"estado": rows.affectedRows})
         } else {
             console.log(err)
         }
@@ -45,7 +45,7 @@ router.post('/rentaAuto', (req,res)=>{
     mysqlConnection.query(query, [auto_usuario, turista_usuario, placa, cantidad_dias, precio_total],(err,rows,fields)=>{
         if (!err) {   
             actualizarAuto(req)
-            res.send({"estado": rows.affectedRows})
+            res.json({"estado": rows.affectedRows})
         } else {
             console.log(err)
         }
@@ -71,7 +71,7 @@ function actualizarAuto(req) {
 router.get('/reservaAuto', (req,res) =>{
     const query = 'select * from Renta_Auto;'
     mysqlConnection.query(query, (err,rows, fields)=>{
-        if(err) return res.send(err)
+        if(err) return res.json(err)
             res.json({"Autos": rows})           
     })  
 })
@@ -85,7 +85,7 @@ router.post('/busquedaPorMarca', (req,res) =>{
     `
     mysqlConnection.query(query, [marca],(err,rows,fields)=>{
         if (!err) {   
-            res.send({"Marcas": rows})
+            res.json({"Marcas": rows})
         } else {
             console.log(err)
         }
@@ -100,7 +100,7 @@ router.post('/busquedaPorModelo', (req,res) =>{
     `
     mysqlConnection.query(query, [modelo],(err,rows,fields)=>{
         if (!err) {   
-            res.send({"Modelos": rows})
+            res.json({"Modelos": rows})
         } else {
             console.log(err)
         }
@@ -114,7 +114,7 @@ router.post('/busquedaAutoPorPrecio', (req,res) =>{
 	where U.Usuario = A.Auto_Usuario and A.Disponible = 1 and (A.Precio >= ? and A.Precio <= ?) order by A.Precio;`
     mysqlConnection.query(query, [precio_menor,precio_mayor],(err,rows,fields)=>{
         if (!err) {   
-            res.send({"Precios": rows})
+            res.json({"Precios": rows})
         } else {
             console.log(err)
         }

@@ -2,7 +2,12 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const app = express();
 
-
+const http = require ('http');
+const server = http.createServer(app);
+const cors = require('cors');
+app.use(cors());
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb', extended:true}));
 
 
 //Middlewares----------------------------------------------------------------------------------
@@ -55,7 +60,8 @@ function verifyToken(req, res,next){
 
 
 
-app.listen(3000, function(){
+const srv = server.listen(3000, function(){
     console.log("nodejs app running...")
 });
 
+module.exports = {server, srv};

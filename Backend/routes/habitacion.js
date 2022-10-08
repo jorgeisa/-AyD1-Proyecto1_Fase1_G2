@@ -11,7 +11,7 @@ router.post('/newHabitacion', (req,res)=>{
     `
     mysqlConnection.query(query, [Hotel_usuario, Disponible, Precio, Cantidad_Personas, Nombre_Habitacion],(err,rows,fields)=>{
         if (!err) {    
-            res.send({"estado": rows.affectedRows})
+            res.json({"estado": rows.affectedRows})
         } else {
             console.log(err)
         }
@@ -45,7 +45,7 @@ router.post('/reservarHabitacion', (req,res)=>{
     mysqlConnection.query(query, [hotel_usuario, turista_usuario, cantidad_habitaciones, precio_total, fecha_entrada, fecha_salida],(err,rows,fields)=>{
         if (!err) {   
             actualizarHabitacion(req)
-            res.send({"estado": rows.affectedRows})
+            res.json({"estado": rows.affectedRows})
         } else {
             console.log(err)
         }
@@ -95,7 +95,7 @@ router.post('/busquedaPorPais', (req,res) =>{
     `
     mysqlConnection.query(query, [pais],(err,rows,fields)=>{
         if (!err) {   
-            res.send({"Hoteles": rows})
+            res.json({"Hoteles": rows})
         } else {
             console.log(err)
         }
@@ -120,7 +120,7 @@ router.post('/busquedaPorCiudad', (req,res) =>{
     `
     mysqlConnection.query(query, [ciudad],(err,rows,fields)=>{
         if (!err) {   
-            res.send({"Hoteles": rows})
+            res.json({"Hoteles": rows})
         } else {
             console.log(err)
         }
@@ -135,7 +135,7 @@ router.post('/busquedaPorHabitacion', (req,res) =>{
     `
     mysqlConnection.query(query, [Cantidad_Personas],(err,rows,fields)=>{
         if (!err) {   
-            res.send({"Cantidad_Personas": rows})
+            res.json({"Cantidad_Personas": rows})
         } else {
             console.log(err)
         }
@@ -150,22 +150,22 @@ router.post('/busquedaPorPrecio', (req,res) =>{
     `
     mysqlConnection.query(query, [precio_menor,precio_mayor],(err,rows,fields)=>{
         if (!err) {   
-            res.send({"Precios": rows})
+            res.json({"Precios": rows})
         } else {
             console.log(err)
         }
     })
 })
 
-router.post('/busquedaPorFecha', (req,res) =>{
-    const {precio_menor, precio_mayor} =req.body
+router.get('/busquedaPorFecha', (req,res) =>{
+    //const {precio_menor, precio_mayor} =req.body
     const query = `
     select U.Usuario, U.Correo_Electronico, U.Pais, U.CIudad, H.Nombre_Habitacion, H.Cantidad_Personas, H.Precio from Usuario as U, Habitacion as H 
-	where U.Usuario = H.Hotel_Usuario and (H.Precio >= ? and H.Precio <= ?) and H.Disponible = 1 order by H.Precio;
+	where U.Usuario = H.Hotel_Usuario and H.Disponible = 1;
     `
-    mysqlConnection.query(query, [precio_menor,precio_mayor],(err,rows,fields)=>{
+    mysqlConnection.query(query,(err,rows,fields)=>{
         if (!err) {   
-            res.send({"Precios": rows})
+            res.json({"Hoteles": rows})
         } else {
             console.log(err)
         }

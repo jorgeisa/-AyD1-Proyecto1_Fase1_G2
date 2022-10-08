@@ -6,13 +6,30 @@ router.get("/api", (req, res)=>{
     res.json({mensaje: "Nodejs and JWT"})
 });
 
+router.post('/login', (req,res)=>{
+    const {usuario, pass} =req.body
+    const query = 'SELECT COUNT(*) as existe FROM Usuario WHERE Usuario=? and Pass=?;'
+    mysqlConnection.query(query, [usuario, pass],(err,rows,fields)=>{
+        if (!err) {   
+            const user = rows[0] 
+            if(user.existe == 1){
+            res.status(200).json(user.existe)}
+            else{
+                describe("Usuario no existe", ()=>{}) 
+                res.json(user.existe)}
+        } else {
+            console.log(err)
+        }
+    })
+})
+
 
 router.post('/tipoUsuario', (req,res)=>{
     const {Id_Tipo, Nombre_Rol} =req.body
     const query = 'insert into Tipo_Usuario (Id_Tipo, Nombre_Rol) values (?,?);'
     mysqlConnection.query(query, [Id_Tipo, Nombre_Rol],(err,rows,fields)=>{
         if (!err) {    
-            res.send({"estado": rows.affectedRows})
+            res.json({"estado": rows.affectedRows})
         } else {
             console.log(err)
         }
@@ -36,7 +53,7 @@ router.post('/newUsuario', (req,res)=>{
     `
     mysqlConnection.query(query, [Usuario, Tipo_usuario, Correo_Electronico, Nombre_Completo, Fecha_Nacimiento, Pass, Pais, Ciudad],(err,rows,fields)=>{
         if (!err) {    
-            res.send({"estado": rows.affectedRows})
+            res.json({"estado": rows.affectedRows})
         } else {
             console.log(err)
         }
@@ -46,7 +63,7 @@ router.post('/newUsuario', (req,res)=>{
 router.get('/allUsuario', (req,res) =>{
     const query = 'SELECT * FROM Usuario;'
     mysqlConnection.query(query, (err,rows, fields)=>{
-        if(err) return res.send(err)
+        if(err) return res.json(err)
             res.json({"Usuarios": rows})           
     })  
 })
@@ -61,7 +78,7 @@ router.post('/newResena', (req,res)=>{
     `
     mysqlConnection.query(query, [turista_usuario, descripcion, servicio_usuario, puntuacion],(err,rows,fields)=>{
         if (!err) {    
-            res.send({"estado": rows.affectedRows})
+            res.json({"estado": rows.affectedRows})
         } else {
             console.log(err)
         }

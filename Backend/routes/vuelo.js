@@ -10,7 +10,7 @@ router.post('/newVuelo', (req,res)=>{
     `
     mysqlConnection.query(query, [aerolinea_usuario, fecha_vuelo, destino, cantidad_asientos, precio],(err,rows,fields)=>{
         if (!err) {    
-            res.send({"estado": rows.affectedRows})
+            res.json({"estado": rows.affectedRows})
         } else {
             console.log(err)
         }
@@ -37,7 +37,7 @@ router.post('/reservaVuelo', (req,res)=>{
     mysqlConnection.query(query, [aerolinea_usuario, turista_usuario, id_vuelo, cantidad_asientos, precio_total, tipo_boleto],(err,rows,fields)=>{
         if (!err) {   
             actualizarVuelo(req)
-            res.send({"estado": rows.affectedRows})
+            res.json({"estado": rows.affectedRows})
         } else {
             console.log(err)
         }
@@ -77,7 +77,7 @@ router.post('/busquedaPorDestino', (req,res) =>{
     `
     mysqlConnection.query(query, [destino],(err,rows,fields)=>{
         if (!err) {   
-            res.send({"Destino": rows})
+            res.json({"Destino": rows})
         } else {
             console.log(err)
         }
@@ -92,7 +92,7 @@ router.post('/busquedaVueloPorPrecio', (req,res) =>{
     `
     mysqlConnection.query(query, [precio_menor,precio_mayor],(err,rows,fields)=>{
         if (!err) {   
-            res.send({"Precios": rows})
+            res.json({"Precios": rows})
         } else {
             console.log(err)
         }
