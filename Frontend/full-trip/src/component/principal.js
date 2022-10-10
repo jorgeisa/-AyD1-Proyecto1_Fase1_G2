@@ -22,20 +22,24 @@ export default function Prinicipal() {
     <div className="App">
       <br />
       <Form>
-        <div class="p-3 mb-2 bg-dark text-white">
+        <div class="p-3 mb-2 bg-dark">
           <Row>
             <Col>
               <br />
               <br />
-              <Button variant="danger" href="">
+              <Button variant="danger mx-2" href="/registro-turista">
                 {" "}
-                RegistrarseF
+                Registrar Turista
+              </Button>
+              <Button variant="danger" href="/registro-servicio">
+                {" "}
+                Registrar Servicio
               </Button>
             </Col>
             <Col>
               {" "}
               <center>
-                <Form.Label style={{ fontSize: "75px" }}>FULL TRIP</Form.Label>{" "}
+                <Form.Label style={{ fontSize: "75px", color: "white" }}>FULL TRIP</Form.Label>{" "}
               </center>
             </Col>
             <Col>
@@ -45,7 +49,7 @@ export default function Prinicipal() {
             </Col>
           </Row>
 
-            <div className={mostrarComponente ? "show-element" : null}>
+            <div style={{}} className={mostrarComponente ? "show-element" : null}>
               {mostrarComponente && (
                 <img
                   src={hotel}

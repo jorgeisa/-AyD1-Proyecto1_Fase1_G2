@@ -12,6 +12,10 @@ import Admin_hotel_eliminar from "./component/admin_hotel_eliminar";
 
 import Reservacion from "./component/reservacion";
 import Crear_Resena from "./component/crear_resena";
+
+import Registro_Turista from "./component/Registro_Turista";
+import Registro_Servicio from "./component/Registro_Servicio";
+
 function App() {
   return (
     <main className="bg-zinc-900 h-screen">
@@ -28,6 +32,9 @@ function App() {
         ></Route>
         <Route exact path="/reservacion" component={Reservacion}></Route>
         <Route exact path="/crear-resena" component={Crear_Resena}></Route>
+
+        <Route exact path="/registro-turista" component={Registro_Turista}></Route>
+        <Route exact path="/registro-servicio" component={Registro_Servicio}></Route>
       </div>
     </main>
   );
