@@ -68,16 +68,12 @@ test('Nueva Reseña - Comprobar rango de Puntuacion', async()=>{
     await api.post('/newResenaTESTpuntuacion')
     .set('Content-type', 'application/json')
     .send({
-       
         Usuario:"gonzcaal", 
-
         turista_usuario:"gonzcaal", 
         descripcion:"Es un hermoso hotel, nos la pasamos genial",
         servicio_usuario:"Habitacion1", 
         //el test falla sino esta en el rango de 0 a 100
         puntuacion:99
-
- 
     })
     .expect(200)
 });
@@ -108,7 +104,6 @@ test('Nuevo Auto - comprobar placa', async()=>{
         marca: "BMW", 
         precio:  "1200", 
         modelo:2020
- 
     })
     .expect(200)
 });
@@ -137,13 +132,57 @@ test('Renta Automovil - comprobar placa', async()=>{
         marca: "Toyota Yaris", 
         precio:  "950", 
         modelo: 2016
- 
     })
     .expect(200)
 });
 
 
+test('Busqueda por modelo - Verificar que es numero', async()=>{
+    await api.post('/busquedaPorModeloTEST')
+    .set('Content-type', 'application/json')
+    .send({
+        //para que el test falle, de debe enviar un numero decimal 2016.2
+        modelo: 2016
+    })
+    .expect(200)
+});
+
+
+test('Nueva Habitacion - Verificar disponible', async()=>{
+    await api.post('/newHabitacionTESTdisponible')
+    .set('Content-type', 'application/json')
+    .send({
+        //para que el test falle, de debe enviar un numemero diferente de 0 y 1
+        Disponible: 1
+    })
+    .expect(200)
+});
+
+test('Reservacion Habitacion - verificar fecha', async()=>{
+    await api.post('/reservarHabitacionTESTfechas')
+    .set('Content-type', 'application/json')
+    .send({
+        //para que el test falle, de debe enviar una fecha incorrecta 2020-02-03F
+        fecha_entrada: "2020-02-02",
+        fecha_salida:"2019-01-01"
+    })
+    .expect(200)
+});
+
+test('Nuevo Vuelo - Fecha mayor a la actual', async()=>{
+    await api.post('/newVueloTESTfecha')
+    .set('Content-type', 'application/json')
+    .send({
+        
+        aerolinea_usuario:"Aerolinea1", 
+        //para que el test falle, de debe enviar una fecha anterior a la actual
+        fecha_vuelo: "2022-11-30", 
+        destino:"Guatemalteco", 
+        cantidad_asientos:100, 
+        precio:120
+    })
+    .expect(200)
+});
 afterAll(()=>{
     srv.close();
-  
 });

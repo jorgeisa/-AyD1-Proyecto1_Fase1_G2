@@ -134,6 +134,16 @@ router.post('/busquedaPorModelo', (req,res) =>{
     })
 })
 
+
+router.post('/busquedaPorModeloTEST', (req,res) =>{
+    modelo=req.body.modelo
+    if (Number.isInteger(modelo)){
+        res.status(200).json()
+    }else{
+        res.status(400).json()
+    }
+})
+
 router.post('/busquedaAutoPorPrecio', (req,res) =>{
     const {precio_menor, precio_mayor} =req.body
     const query = `

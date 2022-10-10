@@ -17,6 +17,23 @@ router.post('/newVuelo', (req,res)=>{
     })
 })
 
+router.post('/newVueloTESTfecha', (req,res)=>{
+    fecha_vuelo=req.body.fecha_vuelo
+    let date1 = new Date(fecha_vuelo); //ingresado a mano
+    
+    let date2 = new Date(); //maquina
+    date2.setDate(date2.getDate()-1)
+
+    
+    console.log(date1.toLocaleDateString())
+    console.log(date2.toLocaleDateString())
+    if (date1>=date2){
+        res.status(200).json()
+    }else{
+        res.status(400).json()
+    }
+})
+
 router.get('/allVuelo', (req,res) =>{
     const query = 'SELECT * FROM Vuelo;'
     mysqlConnection.query(query, (err,rows, fields)=>{

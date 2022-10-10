@@ -18,6 +18,16 @@ router.post('/newHabitacion', (req,res)=>{
     })
 })
 
+router.post('/newHabitacionTESTdisponible', (req,res)=>{
+    Disponible=req.body.Disponible
+
+    if (Disponible==1 || Disponible==0){
+        res.status(200).json()
+    }else{
+        res.status(400).json()
+    }
+})
+
 router.get('/allHabitacion', (req,res) =>{
     const query = 'SELECT * FROM Habitacion;'
     mysqlConnection.query(query, (err,rows, fields)=>{
@@ -50,6 +60,22 @@ router.post('/reservarHabitacion', (req,res)=>{
             console.log(err)
         }
     })
+})
+
+router.post('/reservarHabitacionTESTfechas', (req,res)=>{
+    fecha_entrada=req.body.fecha_entrada
+    fecha_salida =req.body.fecha_salida
+    
+
+    let isValidDate1 = Date.parse(fecha_entrada);
+    let isValidDate2 = Date.parse(fecha_salida);
+    console.log(isValidDate1)
+    console.log(isValidDate2)
+    if (!isNaN(isValidDate1) && !isNaN(isValidDate2)  ) {
+            res.status(200).json();
+    }else{
+        res.status(400).json();
+    }
 })
 
 
