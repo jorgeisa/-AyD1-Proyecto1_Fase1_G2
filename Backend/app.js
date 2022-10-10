@@ -61,7 +61,7 @@ function verifyToken(req, res,next){
 
 
 const srv = server.listen(3000, function(){
-    console.log("nodejs app running...")
+    console.log("Hola guapo, saludos desde NodeJS...")
 });
 
 module.exports = {server, srv};

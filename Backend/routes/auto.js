@@ -17,6 +17,20 @@ router.post('/newAuto', (req,res)=>{
     })
 })
 
+router.post('/newAutoTESTplaca', (req,res)=>{
+    placa=req.body.placa
+    var patt = new RegExp(/^[A-Z]{1}(-[A-Z0-9]{1,6})$/);
+
+
+    if (patt.test(placa)==true){
+        res.status(200).json()
+    }else{
+        res.status(400).json()
+    }
+    
+   
+})
+
 router.get('/allAuto', (req,res) =>{
     const query = 'SELECT * FROM Automovil;'
     mysqlConnection.query(query, (err,rows, fields)=>{
@@ -33,7 +47,7 @@ router.get('/vacantAuto', (req,res) =>{
     })  
 })
 
-// RESERVACION HOTEL----------------------------------------------------------------
+// RESERVACION AUTO----------------------------------------------------------------
 
 
 router.post('/rentaAuto', (req,res)=>{
@@ -50,6 +64,19 @@ router.post('/rentaAuto', (req,res)=>{
             console.log(err)
         }
     })
+})
+
+router.post('/rentaAutoTESTplaca', (req,res)=>{
+    placa=req.body.placa
+    var patt = new RegExp(/^[A-Z]{1}(-[A-Z0-9]{1,6})$/);
+
+
+    if (patt.test(placa)==true){
+        res.status(200).json()
+    }else{
+        res.status(400).json()
+    }
+    
 })
 
 

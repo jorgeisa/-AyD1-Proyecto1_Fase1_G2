@@ -138,6 +138,11 @@ insert into Usuario (Usuario, Tipo_usuario, Correo_Electronico, Nombre_Completo,
 insert into Usuario (Usuario, Tipo_usuario, Correo_Electronico, Nombre_Completo, Fecha_Nacimiento, Pass, Pais, Ciudad) 
 	values ('turista3', 1, 'turista3@gmail.com', 'turista3 Gutierrez', '1997-06-06', 'turista3', 'Nicaragua', 'Managua');
     
+insert into Usuario (Usuario, Tipo_usuario, Correo_Electronico, Nombre_Completo, Fecha_Nacimiento, Pass, Pais, Ciudad) 
+	values ('turista5', 1, 'turista3@gmail.com', 'turista3 Gutierrez', '1997-06-06', 'turista5', 'Nicaragua', 'Managua');
+
+SELECT COUNT(*) FROM Usuario WHERE Usuario='Admin' and Pass='admin123';
+
 -- HOTELES-------------------------------------------------------------------------
 insert into Usuario (Usuario, Tipo_usuario, Correo_Electronico, Nombre_Completo, Pass, Pais, Ciudad) 
 	values ('hotel1', 2, 'hotel1@gmail.com', 'hotel1','hotel1', 'Guatemala', 'Guatemala');
