@@ -9,18 +9,28 @@ router.get("/api", (req, res)=>{
 router.post('/login', (req,res)=>{
     const {usuario, pass} =req.body
     const query = 'SELECT COUNT(*) as existe FROM Usuario WHERE Usuario=? and Pass=?;'
+
+    // ============================PRUEBA UNITARIA 1===============================
+    if(!usuario || !pass){
+        res.status(400).send({msg: "Faltan campos obligatorios"})
+        return
+    }else{
+
     mysqlConnection.query(query, [usuario, pass],(err,rows,fields)=>{
-        if (!err) {   
+        if (!err) {  
+            
+    // ============================PRUEBA UNITARIA 2===============================
             const user = rows[0] 
             if(user.existe == 1){
             res.status(200).json(user.existe)}
             else{
-                describe("Usuario no existe", ()=>{}) 
-                res.json(user.existe)}
+                res.status(400).json(user.existe)}
         } else {
             console.log(err)
         }
     })
+
+}
 })
 
 
