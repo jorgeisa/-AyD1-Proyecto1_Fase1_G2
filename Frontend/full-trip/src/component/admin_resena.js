@@ -1,5 +1,5 @@
-import React, { Component, useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component, useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
@@ -8,11 +8,10 @@ import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
-export default function Admin_hotel() {
-return(  
+export default function Admin_Resena() {
+  return (
     <>
-   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
+       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
         <Navbar.Brand>&nbsp; &nbsp;  Full Trip </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -36,30 +35,18 @@ return(
         </Navbar.Collapse>
         </Navbar>
       <br />
-    <Form>
-    <Container>
-        <br/>
-    
-       <center> 
-            <div class="p-3 mb-2 bg-dark text-white" style={{height: '400px' , width: '1000px', textAlign: 'left'}}>
-              <Row>
-                <Col>
-                <Form.Label style={{fontSize: '40px', color: 'white', verticalAlign: 'middle' }} >Nombre del hotel</Form.Label>
-                <Form.Control type="text" placeholder="Nombre"  /> 
-                <center><Form.Label style={{fontSize: '40px', color: 'white', verticalAlign: 'middle' }} >o</Form.Label> <br></br></center>
-                <Form.Label style={{fontSize: '40px', color: 'white', verticalAlign: 'middle' }} >Correo Electronico</Form.Label>
-                <Form.Control type="text" placeholder="Correo"  /> 
-                <br></br>
-                <center>
-                            <Button variant="info" style={{fontSize: '20px'}}> Eliminar</Button>
-                </center>
-                </Col>
-              </Row>
-            </div>
-        </center>
-    </Container>
-</Form>
-</>
-)
-
+      <Form>
+        <Container>
+          <div class="p-3 mb-2 bg-light text-dark">
+            <center>
+              <Form.Label style={{ fontSize: "75px" }}>
+                Resenias
+              </Form.Label>
+              <textarea id='tx' class="form-control"  /> 
+            </center>
+          </div>
+        </Container>
+      </Form>
+    </>
+  );
 }

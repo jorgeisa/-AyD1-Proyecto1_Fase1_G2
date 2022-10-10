@@ -8,7 +8,31 @@ import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import axios from 'axios';
+
+
 export default function Hotel_Turista() {
+const [resenas,setResena] = useState("");
+      async function enviar() {
+        const res = await axios.get('http://localhost:3000/allResena');
+        console.log(res.data.Resena)
+        var newDiv = document.getElementById("tx")
+        var newDiv = document.getElementById("tx")
+        for (var i=0; i < res.data.Resena.length; i++){
+          newDiv.innerHTML += res.data.Resena[i].Turista_Usuario;
+          newDiv.innerHTML += '                            ';
+          newDiv.innerHTML += 'Puntuacion: '+res.data.Resena[i].Puntuacion + '/10';
+          newDiv.innerHTML += '\n';
+          newDiv.innerHTML += 'Nombre del Servicio: '+ res.data.Resena[i].Servicio_Usuario;
+          newDiv.innerHTML += '\n';
+          newDiv.innerHTML += 'Resena: '+res.data.Resena[i].Descripcion;
+          newDiv.innerHTML += '\n';
+          newDiv.innerHTML += '\n';
+        }
+      }
+      useEffect(() => {
+        enviar()
+      })
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
@@ -34,13 +58,13 @@ export default function Hotel_Turista() {
 
       <br />
       <Form>
-        <Container>
-          <div class="p-3 mb-2 bg-light text-dark">
+        <Container >
+          <div class="p-3 mb-2 bg-light text-dark" >
             <center>
               <Form.Label style={{ fontSize: "75px" }}>
                 Resenias
               </Form.Label>
-              <textarea id='tx' class="form-control"  /> 
+              <textarea id='tx' class="form-control"   /> 
             </center>
           </div>
         </Container>

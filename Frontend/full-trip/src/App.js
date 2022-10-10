@@ -12,7 +12,8 @@ import Admin_hotel_eliminar from "./component/admin_hotel_eliminar";
 
 import Reservacion from "./component/reservacion";
 import Crear_Resena from "./component/crear_resena";
-
+import Admin_Resena from './component/admin_resena';
+import Admin_ver from './component/admin_ver_hotel';
 import Registro_Turista from "./component/Registro_Turista";
 import Registro_Servicio from "./component/Registro_Servicio";
 
@@ -20,18 +21,16 @@ function App() {
   return (
     <main className="bg-zinc-900 h-screen">
       <div className="">
-        <Route exact path="/" component={principal}></Route>
-        <Route exact path="/login" component={Login}></Route>
-        <Route exact path="/hotel-turista" component={Hotel_Turista}></Route>
-        <Route exact path="/creacion-hotel" component={Creacion_Hotel}></Route>
-        <Route exact path="/admin-hotel-crear" component={Admin_hotel}></Route>
-        <Route
-          exact
-          path="/admin-hotel-eliminar"
-          component={Admin_hotel_eliminar}
-        ></Route>
-        <Route exact path="/reservacion" component={Reservacion}></Route>
-        <Route exact path="/crear-resena" component={Crear_Resena}></Route>
+        <Route exact path ="/" component={principal}></Route>
+        <Route exact path ="/login" component={Login}></Route>
+        <Route exact path ="/hotel-turista" component={Hotel_Turista}></Route>
+        <Route exact path ="/creacion-hotel" component={Creacion_Hotel}></Route>
+        <Route exact path ="/admin-hotel-crear" component={Admin_hotel}></Route>
+        <Route exact path ="/admin-hotel-eliminar" component={Admin_hotel_eliminar}></Route>
+        <Route exact path ="/reservacion" component={Reservacion}></Route>
+        <Route exact path ="/crear-resena" component={Crear_Resena}></Route>
+        <Route exact path ="/admin-resena" component={Admin_Resena}></Route>
+        <Route exact path ="/admin-hotel" component={Admin_ver}></Route>
 
         <Route exact path="/registro-turista" component={Registro_Turista}></Route>
         <Route exact path="/registro-servicio" component={Registro_Servicio}></Route>

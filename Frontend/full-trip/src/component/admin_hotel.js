@@ -12,78 +12,33 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 export default function Admin_hotel() {
 return(  
     <>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse " id="responsive-navbar-nav">
-          <Navbar.Brand> Full Trip </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <NavDropdown title="Hotel" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="./admin-hotel-crear">
-                  Ver todos
-                </NavDropdown.Item>
-                <NavDropdown.Item href="./admin-hotel-crear">
-                  Registrar
-                </NavDropdown.Item>
-                <NavDropdown.Item href="./admin-hotel-eliminar">
-                  Eliminar
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown
-                title="Renta de Autos"
-                id="collasible-nav-dropdown"
-              >
-                 <NavDropdown.Item href="./admin-hotel">
-                  Ver todos
-                </NavDropdown.Item>
-                 <NavDropdown.Item href="./admin-hotel">
-                  Registrar
-                </NavDropdown.Item>
-                <NavDropdown.Item href="./admin-hotel">
-                  Eliminar
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title="Vuelos" id="collasible-nav-dropdown">
+ <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
+        <Navbar.Brand>&nbsp; &nbsp;  Full Trip </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+          <NavDropdown title="Hotel" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="./admin-hotel-crear">
+                Registrar Hotel
+              </NavDropdown.Item>
+              <NavDropdown.Item href="./admin-hotel-eliminar">
+                Eliminar Hotel
+              </NavDropdown.Item>
               <NavDropdown.Item href="./admin-hotel">
-                  Ver todos
-                </NavDropdown.Item>
-              <NavDropdown.Item href="./admin-hotel">
-                  Registrar
-                </NavDropdown.Item>
-                <NavDropdown.Item href="./admin-hotel">
-                  Eliminar
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title="Resena" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="./admin-hotel">
-                  Ver todos
-                </NavDropdown.Item>
-              <NavDropdown.Item href="./admin-hotel">
-                  Registrar
-                </NavDropdown.Item>
-                <NavDropdown.Item href="./admin-hotel">
-                  Eliminar
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-          <div class="d-flex align-items-center">
-            <Nav.Link href="./" style={{ color: "white" }}>
-              cerrar sesion
-            </Nav.Link>
-          </div>
-        </div>
-      </div>
-    </nav>
+                Ver Hoteles
+              </NavDropdown.Item>
+            </NavDropdown>
+          <Nav.Link href="./Reservacion" >Renta de Autos</Nav.Link>
+          <Nav.Link href="./Reservacion" >Vuelos </Nav.Link>
+          <Nav.Link href="./admin-resena" >resena </Nav.Link>
+          <Nav.Link href="./" >Cerrar sesion</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+        </Navbar>
     <Form>
     <Container>
         <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+
        <center> 
             <div class="p-3 mb-2 bg-dark text-white" style={{height: '400px' , width: '1000px', textAlign: 'left'}}>
               <Row>
