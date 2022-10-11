@@ -24,7 +24,7 @@ export default function Login() {
   }
 
   async function enviar() {
-    window.location.href = "../hotel-registro-habitacion/usuarioXD";
+   // window.location.href = "../hotel-registro-habitacion/usuarioXD";
     const res = await axios.post("http://34.125.5.215:4000/login", {
       usuario: user,
       pass: passw,
@@ -47,21 +47,21 @@ export default function Login() {
     } else if (tipo == "2") {
       if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Hotel") {
         window.alert("Bienvenido");
-        window.location.href = "../hotel-registro-habitacion";
+        window.location.href = "../hotel-registro-habitacion/"+user;
       } else {
         window.alert("Usuario/correo o password incorrectos");
       }
     } else if (tipo == "3") {
       if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Renta Auto") {
         window.alert("Bienvenido");
-        window.location.href = "../auto-registro-auto";
+        window.location.href = "../auto-registro-auto/"+user;
       } else {
         window.alert("Usuario/correo o password incorrectos");
       }
     } else if (tipo == "4") {
       if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Aerolinea") {
         window.alert("Bienvenido");
-        window.location.href = "../hotel-turista";
+        window.location.href = "../vuelo-registro-vuelo/"+user;
       } else {
         window.alert("Usuario/correo o password incorrectos");
       }

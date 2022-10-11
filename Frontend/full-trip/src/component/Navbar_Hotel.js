@@ -1,6 +1,6 @@
 // import React, { Component, useEffect, useState } from "react";
 
-export default function Navbar_Hotel({user}) {
+export default function Navbar_Hotel({ user }) {
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -32,6 +32,11 @@ export default function Navbar_Hotel({user}) {
             <li class="nav-item">
               <a class="nav-link" href="#">
                 Mostrar Habitaciones
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                Cerrar Sesion
               </a>
             </li>
           </ul>

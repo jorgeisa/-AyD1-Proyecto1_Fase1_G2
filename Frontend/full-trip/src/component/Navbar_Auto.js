@@ -1,11 +1,11 @@
 // import React, { Component, useEffect, useState } from "react";
 
-export default function Navbar_Auto() {
+export default function Navbar_Auto({ user }) {
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          Full Trip
+          Full Trip - {user}
         </a>
         <button
           class="navbar-toggler"
@@ -32,6 +32,11 @@ export default function Navbar_Auto() {
             <li class="nav-item">
               <a class="nav-link" href="#">
                 Mostrar Automoviles
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                Cerrar Sesion
               </a>
             </li>
           </ul>

@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import axios from "axios";
+import Button from "react-bootstrap/Button";
 
 export default function Registro_Servicio() {
   const [nombreServicio, setNombreServicio] = useState("");
@@ -20,16 +21,15 @@ export default function Registro_Servicio() {
       // Hotel
       // Autos
       // Aerolinea
-      console.log("aaaaaaaaaaaaaaaaaaaaaaa");
+
       const res = await axios.post("http://34.125.5.215:4000/newUsuario", {
         Usuario: nombreServicio,
-        Tipo_Usuario: tipoServicio,
+        Tipo_usuario: tipoServicio,
         Correo_Electronico: correoServicio,
         Nombre_Completo: nombreServicio,
-        Fecha_Nacimiento: null,
         Pass: contrasenaServicio,
         Pais: paisServicio,
-        Ciudad: ciudadServicio
+        Ciudad: ciudadServicio,
       });
       console.log(res.data);
       window.alert("Tu usuario se ha registrado!");
@@ -138,9 +138,10 @@ export default function Registro_Servicio() {
         </div>
 
         <div class="form-group px-11 content-center align-middle">
-          <button onClick={()=>registrar()} type="submit" class="btn btn-success mt-2 mx-5">
-            Registrarse
-          </button>
+          <Button variant="info" onClick={(e) => registrar()}>
+            {" "}
+            Registrar
+          </Button>
 
           <a class="btn btn-danger mt-2" href="/" role="button">
             Regresar

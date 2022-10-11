@@ -1,11 +1,11 @@
 // import React, { Component, useEffect, useState } from "react";
 import Navbar_Auto from "./Navbar_Auto";
 
-export default function Auto_Registro_Auto() {
+export default function Auto_Registro_Auto(props) {
   return (
     <div>
-      <Navbar_Auto />
-
+      <Navbar_Auto user={props.params.user} />
+      <h3 className="mt-6" style={{color: "white"}}>Bienvenido {props.params.user}</h3>
       <div className="max-w-md max-h-full mx-auto">
         <br />
         <form
