@@ -62,6 +62,25 @@ router.post('/reservaVuelo', (req,res)=>{
 })
 
 
+router.post('/reservaVueloTESTvueloExiste', (req,res)=>{
+    const {aerolinea_usuario, turista_usuario, id_vuelo, cantidad_asientos, precio_total, tipo_boleto} =req.body
+    const query = `SELECT COUNT(*) as existe FROM Vuelo WHERE  Id_Vuelo = ?;`
+
+    mysqlConnection.query(query, [id_vuelo],(err,rows,fields)=>{
+        if (!err) {  
+            const user = rows[0] 
+            if(user.existe == 1){
+            res.status(200).json(user.existe)}
+            else{
+                res.status(400).json(user.existe)}
+        } else {
+            console.log(err)
+        }
+    })
+})
+
+
+
 function actualizarVuelo(req) {
  const {id_vuelo, cantidad_asientos} =req.body
     const query = `

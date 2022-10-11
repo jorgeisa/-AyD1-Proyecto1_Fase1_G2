@@ -183,6 +183,39 @@ test('Nuevo Vuelo - Fecha mayor a la actual', async()=>{
     })
     .expect(200)
 });
+
+test('Reeservar Vuelo- validar que el vuelo exista', async()=>{
+    await api.post('/reservaVueloTESTvueloExiste')
+    .set('Content-type', 'application/json')
+    .send({
+        aerolinea_usuario: "aerolinea1", 
+        turista_usuario:"turista1", 
+         //para que el test falle enviar el id_vuelo que no exista
+        id_vuelo: 2, 
+        cantidad_asientos: 2, 
+        precio_total: 4500, 
+        tipo_boleto: 1
+    })
+    .expect(200)
+});
+
+test('Rljar Vuelo- validar que el vuelo exista', async()=>{
+    await api.post('/allResenaTEST')
+    .set('Content-type', 'application/json')
+    .send({
+        //para que el test falle enviar el Tipo_Usuario diferente a los roles permitidos de 
+        //servicios tercerizados
+        //Hotel = 2
+        //Renta Auto = 3
+        //Aerolinea = 4
+        Tipo_Usuario: 2
+    })
+    .expect(200)
+});
+
+
+
+
 afterAll(()=>{
     srv.close();
 });

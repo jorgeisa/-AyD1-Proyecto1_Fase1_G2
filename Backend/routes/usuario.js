@@ -173,4 +173,23 @@ router.get('/allResena', (req,res) =>{
 })
 
 
+router.post('/allResenaTEST', (req,res)=>{
+    const {Tipo_Usuario} =req.body
+    const query = `
+    SELECT Id_Resena, Turista_Usuario, Descripcion, Servicio_Usuario, Puntuacion
+    FROM Resena as R, Usuario as U WHERE  R.Servicio_Usuario = U.usuario  and Tipo_Usuario = ?;
+    `
+    mysqlConnection.query(query, [Tipo_Usuario],(err,rows,fields)=>{
+        if (!err) {    
+            if(Tipo_Usuario >= 2 && Tipo_Usuario <= 4){
+                res.status(200).json(rows)
+            }else{
+                    res.status(400).json()}
+        } else {
+            console.log(err)
+        }
+    })
+})
+
+
 module.exports = router;
