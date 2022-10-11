@@ -1,4 +1,6 @@
 import React, { Component, useEffect, useState, useContext } from "react";
+import {hashHistory} from 'react';
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/esm/Container";
@@ -22,6 +24,7 @@ export default function Login() {
   }
 
   async function enviar() {
+    window.location.href = "../hotel-registro-habitacion/usuarioXD";
     const res = await axios.post("http://34.125.5.215:4000/login", {
       usuario: user,
       pass: passw,

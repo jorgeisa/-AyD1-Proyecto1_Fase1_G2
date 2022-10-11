@@ -1,11 +1,15 @@
 // import React, { Component, useEffect, useState } from "react";
 import Navbar_Hotel from "./Navbar_Hotel";
+import { ExtractRouteParams } from "wouter";
 
-export default function Hotel_Registro_Habitacion() {
+export default function Hotel_Registro_Habitacion(props) {   
+    
+
   return (
+    
     <div>
-      <Navbar_Hotel />
-
+      <Navbar_Hotel user={props.params.user} />
+      <h3 className="mt-6" style={{color: "white"}}>Bienvenido {props.params.user}</h3>
       <div className="max-w-md max-h-full mx-auto">
         <br />
         <form

@@ -1,11 +1,11 @@
 // import React, { Component, useEffect, useState } from "react";
 
-export default function Navbar_Hotel() {
+export default function Navbar_Hotel({user}) {
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          Full Trip
+          Full Trip - {user}
         </a>
         <button
           class="navbar-toggler"

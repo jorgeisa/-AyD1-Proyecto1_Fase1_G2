@@ -1,7 +1,10 @@
 import React, { Component, useEffect, useReducer, useState } from "react";
+
 import "./App.css";
 //import librerias
-import { Link, Route } from "wouter";
+import { Link, Route, Router } from "wouter";
+
+
 //import rutas
 import principal from "./component/principal";
 import Login from "./component/login";
@@ -50,7 +53,7 @@ function App() {
         <Route exact path="/registro-servicio" component={Registro_Servicio}></Route>
 
         <Route exact path="/auto-registro-auto" component={Auto_Registro_Auto}/>
-        <Route exact path="/hotel-registro-habitacion" component={Hotel_Registro_Habitacion}/>
+        <Route exact path="/hotel-registro-habitacion/:user" component={Hotel_Registro_Habitacion}/>
         <Route exact path="/vuelo-registro-vuelo" component={Vuelo_Registro_Vuelo}/>
         
       </div>

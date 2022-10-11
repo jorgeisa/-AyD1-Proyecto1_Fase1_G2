@@ -11,7 +11,7 @@ export function LoginContextProvider(props) {
 
   useEffect(() => {
     setUserGlobal("userLogin");
-  }, "");
+  }, []);
 
   return (
     <LoginContext.Provider value={{ userGlobal, cambiarUsuarioGlobal }}>
