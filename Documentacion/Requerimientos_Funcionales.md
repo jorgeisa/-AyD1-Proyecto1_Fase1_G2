@@ -27,3 +27,8 @@ Se maneja una prioridad de 1-6 siendo 6 la mas importante.
 | RF20 | Mensaje de error si en el registro de usuario (turista y servicio de tercero) al no completar el formulario. | Si el usuario que se encuentra registrandose no llena los campos requeridos se mostrará un mensaje informando que falta información.| 4 |
 | RF21 | Historial de usuario turista. | El usuario turista podrá ver las acciones realizadas (alquiler, reservacion de vuelo y alquiler de autos)| 2 |
 | RF22 | Usuario turista puede ver todos los servicios de terceros. | El usuario de tipo turista puede visualizar toda la lista de servicios de terceros disponibles, para alquilar un auto, reservar vuelo y reservar habitaciones sin tener filtro de buscador. | 4 |
+|  | Fase | 2 | - |
+| RF23 | Usuario de Servicio de Terceros de Automoviles puede realizar una carga masiva. | La carga masiva de datos (automoviles) se podra realizar para el usuario de servicios de renta de automoviles. Tambien se podrán ingresar manualmente| 4 |
+| RF24 | Usuario de Vuelos podra agregar vuelos de ida y de ida y vuelta. | El usuario de aerolineas tendra como opcion agregar un vuelo de tipo "ida" o de tipo "ida y vuelta".| 4 |
+| RF25 | Usuario Turista podra visualizar las reservaciones por medio d eun calendario. | El usuario turista al iniciar sesion podra visualizar por medio de un calendario las fechas de reservacion de hoteles, vuelos y autos.| 3 |
+

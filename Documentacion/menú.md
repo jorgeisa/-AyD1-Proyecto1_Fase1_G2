@@ -47,6 +47,9 @@
 - [Caso de Uso Extendido Turista](ExtendidoTurista.md)
 - [Caso de Uso Extendido Usuario](ExtendidoUsuario.md)
 - [Caso de Uso Extendido Comprar Vuelo](ExtendidoComprarVuelo.md)
+
+# ISSUES
+- - [Issues](Issues.md)
     
 
 
