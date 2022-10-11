@@ -30,4 +30,5 @@ Se maneja una prioridad de 1-6 siendo 6 la mas importante.
 |  | Fase | 2 | - |
 | RF23 | Usuario de Servicio de Terceros de Automoviles puede realizar una carga masiva. | La carga masiva de datos (automoviles) se podra realizar para el usuario de servicios de renta de automoviles. Tambien se podrán ingresar manualmente| 4 |
 | RF24 | Usuario de Vuelos podra agregar vuelos de ida y de ida y vuelta. | El usuario de aerolineas tendra como opcion agregar un vuelo de tipo "ida" o de tipo "ida y vuelta".| 4 |
+| RF25 | Usuario Turista podra visualizar las reservaciones por medio d eun calendario. | El usuario turista al iniciar sesion podra visualizar por medio de un calendario las fechas de reservacion de hoteles, vuelos y autos.| 3 |
 
