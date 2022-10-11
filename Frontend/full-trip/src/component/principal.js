@@ -25,7 +25,8 @@ export default function Prinicipal() {
               <Container>     
                           <div class="p-3 mb-2 bg-dark  text-white">
                             <Row>  
-                              <Col><br/><br/><Button variant="danger" href=''> Registrarse</Button></Col> 
+                              <Col><br/><br/><Button variant="danger" href='registro-turista'> Registrarse Turista</Button>
+                              <br/><br/><Button variant="danger" href='registro-servicio'> Registrarse Servicios</Button></Col> 
                               <Col> <center><Form.Label style={{ fontSize: '75px'}}  >FULL TRIP</Form.Label> </center></Col>
                               <Col><br/><br/><Button  href='../login' > Iniciar Sesion</Button></Col>
                             </Row>   

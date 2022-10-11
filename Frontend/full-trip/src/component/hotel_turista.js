@@ -13,23 +13,24 @@ import axios from 'axios';
 
 export default function Hotel_Turista() {
 const [resenas,setResena] = useState("");
-      async function enviar() {
+     
+  async function enviar() {
         const res = await axios.get('http://localhost:3000/allResena');
-        console.log(res.data.Resena)
+        console.log(res.data.resena)
         var newDiv = document.getElementById("tx")
-        var newDiv = document.getElementById("tx")
-        for (var i=0; i < res.data.Resena.length; i++){
-          newDiv.innerHTML += res.data.Resena[i].Turista_Usuario;
+
+        for (var i=0; i < res.data.resena.length; i++){
+          newDiv.innerHTML += res.data.resena[i].Turista_Usuario;
           newDiv.innerHTML += '                            ';
-          newDiv.innerHTML += 'Puntuacion: '+res.data.Resena[i].Puntuacion + '/10';
+          newDiv.innerHTML += 'Puntuacion: '+res.data.resena[i].Puntuacion + '/10';
           newDiv.innerHTML += '\n';
-          newDiv.innerHTML += 'Nombre del Servicio: '+ res.data.Resena[i].Servicio_Usuario;
+          newDiv.innerHTML += 'Nombre del Servicio: '+ res.data.resena[i].Servicio_Usuario;
           newDiv.innerHTML += '\n';
-          newDiv.innerHTML += 'Resena: '+res.data.Resena[i].Descripcion;
+          newDiv.innerHTML += 'Resena: '+res.data.resena[i].Descripcion;
           newDiv.innerHTML += '\n';
           newDiv.innerHTML += '\n';
         }
-      }
+  }
       useEffect(() => {
         enviar()
       })
@@ -41,11 +42,11 @@ const [resenas,setResena] = useState("");
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
           <Nav.Link href="./Reservacion" >Hotel</Nav.Link>
-          <Nav.Link href="./Reservacion" >Renta de Autos</Nav.Link>
-          <Nav.Link href="./Reservacion" >Vuelos </Nav.Link>
+          <Nav.Link href="./renta" >Renta de Autos</Nav.Link>
+          <Nav.Link href="./vuelo" >Vuelos </Nav.Link>
             <NavDropdown title="Resena" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="./hotel-turista">
-                Hacer Resena
+              <NavDropdown.Item href="./crear-resena">
+                Registrar Resena
               </NavDropdown.Item>
               <NavDropdown.Item href="./hotel-turista">
                 Ver Resenas

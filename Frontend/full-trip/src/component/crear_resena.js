@@ -9,9 +9,30 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from 'react-bootstrap/Button'
 
-export default function Crear_Resena() {
-    const [combo, setCombo] = useState("");
+import axios from 'axios';
 
+
+export default function Crear_Resena() {
+    const [user, setUser] = useState("");
+    const [desc, setDesc] = useState("");
+    const [servi, SetServi] = useState("");
+
+    async function enviar() {
+      var cod = document.getElementById("select").value;
+      console.log(CSSConditionRule)
+      const res = await axios.post('http://localhost:3000/newResena', {
+        turista_usuario: user,
+        descripcion: desc, 
+        servicio_usuario: servi, 
+        puntuacion: cod, 
+      });
+
+      console.log(res.data)
+    }
+
+    function seleccionado(){
+      var cod = document.getElementById("select").value;
+    }
       
 return(
     <>
@@ -47,19 +68,12 @@ return(
                 <Col>
                 
                 <Form.Label style={{fontSize: '30px',  verticalAlign: 'middle' }}  >Nombre Servicio</Form.Label>
-                <Form.Control type="text" placeholder="Nombre Hotel"/> 
+                <Form.Control type="text" placeholder="Nombre Hotel" onChange={e=>SetServi(e.target.value)}/> 
                 <Form.Label style={{fontSize: '30px',  verticalAlign: 'middle' }}  >Descripcion/Opinion del servicio</Form.Label>
-                <Form.Control type="text" placeholder="Nombre Hotel"/> 
+                <Form.Control type="text" placeholder="Descripcion" onChange={e=>setDesc(e.target.value)}/> 
                 
-                <Form.Label style={{fontSize: '30px',  verticalAlign: 'middle' }} >Tipo de Servicio</Form.Label>
-                <Form.Select class="selectpicker"  data-style="btn-info" id='select' style={{width:'200px'}}>
-                <option >Tipo de Servicio</option>
-                <option value="1" >Vuelo</option>
-                <option value="2">Hotel</option>
-                <option value="3">Renta de Autos</option>
-                </Form.Select>
                 <Form.Label style={{fontSize: '30px',  verticalAlign: 'middle' }} >Calificacion: 
-                <Form.Select class="selectpicker"  data-style="btn-info" id='select' style={{width:'200px'}}>
+                <Form.Select class="selectpicker"  data-style="btn-info" id='select' style={{width:'200px'}} onChange={()=>seleccionado}>
                 <option >Elija Calificacion</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -76,12 +90,9 @@ return(
                 </Col>
                 <Col>
                 <Form.Label style={{fontSize: '30px',  verticalAlign: 'middle' }} >Usuario</Form.Label>
-                <Form.Control type="text" placeholder="Nombre"  /> 
-                <Form.Label style={{fontSize: '30px', verticalAlign: 'middle' }}  >Password para confirmacion</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-                
+                <Form.Control type="text" placeholder="Nombre"  onChange={e=>setUser(e.target.value)} /> 
                 <br></br>
-                <center><Button variant="info" style={{fontSize: '25px'}}> Enviar</Button></center>
+                <center><Button variant="info" style={{fontSize: '25px'}} onClick={()=>enviar()}> Enviar</Button></center>
                 </Col>
               </Row>
             </div>
