@@ -9,6 +9,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 export default function Admin_ver() {
+  
   return (
     <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >

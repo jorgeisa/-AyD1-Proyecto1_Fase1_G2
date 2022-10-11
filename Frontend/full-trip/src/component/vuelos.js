@@ -26,7 +26,7 @@ export default function Vuelo() {
    async function enviar() {
     var tipo = document.getElementById("select2").value;
     console.log(tipo)
-    const res = await axios.post('http://localhost:3000/reservaVuelo', {
+    const res = await axios.post('http://34.125.5.215:4000/reservaVuelo', {
         aerolinea_usuario: nombre,
         turista_usuario: user,
         id_vuelo: cantidad, 
@@ -46,7 +46,7 @@ export default function Vuelo() {
 
     var cod = document.getElementById("select").value;
     if (cod == "1") {
-        const res = await axios.post('http://localhost:3000/busquedaPorDestino', {
+        const res = await axios.post('http://34.125.5.215:4000/busquedaPorDestino', {
             destino: bdestino
         });
 
@@ -74,7 +74,7 @@ export default function Vuelo() {
             newDiv.innerHTML += '\n';
         }
     } else if (cod == "2") {
-        const res = await axios.post('http://localhost:3000/busquedaVueloPorPrecio', {
+        const res = await axios.post('http://34.125.5.215:4000/busquedaVueloPorPrecio', {
             precio_menor: bpreme,
             precio_mayor: bprema
         });

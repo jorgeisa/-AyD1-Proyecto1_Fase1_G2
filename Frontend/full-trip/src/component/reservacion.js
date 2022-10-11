@@ -28,7 +28,7 @@ export default function Reservacion() {
 
     async function enviar() {
       
-      const res = await axios.post('http://localhost:3000/reservarHabitacion', {
+      const res = await axios.post('http://34.125.5.215:4000/reservarHabitacion', {
         hotel_usuario: nombre,
         turista_usuario: user,
         cantidad_habitaciones: cantidad, 

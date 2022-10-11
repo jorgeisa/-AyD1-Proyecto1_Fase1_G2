@@ -22,8 +22,8 @@ export default function Login() {
     }
 
     async function enviar() {
-        const res = await axios.post('http://localhost:3000/login',{usuario:user,pass:passw});
-        const tipo2 = await axios.post('http://localhost:3000/loginDatosUsuario',{usuario:user,pass:passw});
+        const res = await axios.post('http://34.125.5.215:4000/login',{usuario:user,pass:passw});
+        const tipo2 = await axios.post('http://34.125.5.215:4000/loginDatosUsuario',{usuario:user,pass:passw});
         console.log(tipo2.data[0].Nombre_Rol)
         if(tipo2.data[0].Nombre_Rol == "Administrador"){
             window.location.href = '../admin-hotel-crear';

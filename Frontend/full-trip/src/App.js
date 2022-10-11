@@ -22,7 +22,7 @@ import Vuelo from "./component/vuelos";
 function App() {
   return (
     <main className="bg-zinc-900 h-screen">
-      <div className="">
+      <div className="App">
          {/*general*/}
         <Route exact path ="/" component={principal}></Route>
         <Route exact path ="/login" component={Login}></Route>

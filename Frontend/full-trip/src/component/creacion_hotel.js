@@ -23,7 +23,7 @@ export default function Creacion_Hotel() {
         }else{
             setDispo(1);
         }
-        const res = await axios.post('http://localhost:3000/newHabitacion',{
+        const res = await axios.post('http://34.125.5.215:4000/newHabitacion',{
             Hotel_usuario:usuario, 
             Disponible:dispo,
             Precio:precio,

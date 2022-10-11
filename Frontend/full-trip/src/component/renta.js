@@ -27,7 +27,7 @@ export default function Renta() {
 
     async function enviar() {
       
-        const res = await axios.post('http://localhost:3000/rentaAuto', {      
+        const res = await axios.post('http://34.125.5.215:4000/rentaAuto', {      
                 auto_usuario: nombre, 
                 turista_usuario: user, 
                 placa:plac, 
@@ -47,7 +47,7 @@ export default function Renta() {
 
         var cod = document.getElementById("select").value;
         if (cod == "1") {
-            const res = await axios.post('http://localhost:3000/busquedaPorMarca', {
+            const res = await axios.post('http://34.125.5.215:4000/busquedaPorMarca', {
                 marca: bmarca
             });
 
@@ -73,7 +73,7 @@ export default function Renta() {
                 newDiv.innerHTML += '\n';
             }
         } else if (cod == "2") {
-            const res = await axios.post('http://localhost:3000/busquedaPorModelo', {
+            const res = await axios.post('http://34.125.5.215:4000/busquedaPorModelo', {
                 modelo: bmodelo
             });
 
@@ -99,7 +99,7 @@ export default function Renta() {
                 newDiv.innerHTML += '\n';
             }
         } else if (cod == "3") {
-            const res = await axios.post('http://localhost:3000/busquedaAutoPorPrecio', {
+            const res = await axios.post('http://34.125.5.215:4000/busquedaAutoPorPrecio', {
                 precio_menor: bpreme,
                 precio_mayor: bprema
             });

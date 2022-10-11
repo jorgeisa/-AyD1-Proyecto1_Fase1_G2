@@ -8,7 +8,29 @@ import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import axios from 'axios';
 export default function Admin_Resena() {
+  async function enviar() {
+    const res = await axios.get('http://34.125.5.215:4000/allResena');
+    console.log(res.data.resena)
+    var newDiv = document.getElementById("tx")
+
+    for (var i=0; i < res.data.resena.length; i++){
+      newDiv.innerHTML += res.data.resena[i].Turista_Usuario;
+      newDiv.innerHTML += '                            ';
+      newDiv.innerHTML += 'Puntuacion: '+res.data.resena[i].Puntuacion + '/10';
+      newDiv.innerHTML += '\n';
+      newDiv.innerHTML += 'Nombre del Servicio: '+ res.data.resena[i].Servicio_Usuario;
+      newDiv.innerHTML += '\n';
+      newDiv.innerHTML += 'Reseña: '+res.data.resena[i].Descripcion;
+      newDiv.innerHTML += '\n';
+      newDiv.innerHTML += '\n';
+    }
+}
+
+useEffect(() => {
+  enviar()
+})
   return (
     <>
        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >

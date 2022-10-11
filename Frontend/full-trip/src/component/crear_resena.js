@@ -20,7 +20,7 @@ export default function Crear_Resena() {
     async function enviar() {
       var cod = document.getElementById("select").value;
       console.log(CSSConditionRule)
-      const res = await axios.post('http://localhost:3000/newResena', {
+      const res = await axios.post('http://34.125.5.215:4000/newResena', {
         turista_usuario: user,
         descripcion: desc, 
         servicio_usuario: servi, 

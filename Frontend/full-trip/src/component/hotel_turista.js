@@ -15,7 +15,7 @@ export default function Hotel_Turista() {
 const [resenas,setResena] = useState("");
      
   async function enviar() {
-        const res = await axios.get('http://localhost:3000/allResena');
+        const res = await axios.get('http://34.125.5.215:4000/allResena');
         console.log(res.data.resena)
         var newDiv = document.getElementById("tx")
 
@@ -26,7 +26,7 @@ const [resenas,setResena] = useState("");
           newDiv.innerHTML += '\n';
           newDiv.innerHTML += 'Nombre del Servicio: '+ res.data.resena[i].Servicio_Usuario;
           newDiv.innerHTML += '\n';
-          newDiv.innerHTML += 'Resena: '+res.data.resena[i].Descripcion;
+          newDiv.innerHTML += 'Reseña: '+res.data.resena[i].Descripcion;
           newDiv.innerHTML += '\n';
           newDiv.innerHTML += '\n';
         }
@@ -46,7 +46,7 @@ const [resenas,setResena] = useState("");
           <Nav.Link href="./vuelo" >Vuelos </Nav.Link>
             <NavDropdown title="Resena" id="collasible-nav-dropdown">
               <NavDropdown.Item href="./crear-resena">
-                Registrar Resena
+                Registrar Reseña
               </NavDropdown.Item>
               <NavDropdown.Item href="./hotel-turista">
                 Ver Resenas
@@ -63,7 +63,7 @@ const [resenas,setResena] = useState("");
           <div class="p-3 mb-2 bg-light text-dark" >
             <center>
               <Form.Label style={{ fontSize: "75px" }}>
-                Resenias
+              Reseñas
               </Form.Label>
               <textarea id='tx' class="form-control"   /> 
             </center>
