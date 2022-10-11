@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/esm/Container";
@@ -15,45 +15,53 @@ export default function Login() {
   const [passw, setPass] = useState("");
   const [tipo, setTipo] = useState("");
 
-    async function enviar() {
-        const res = await axios.post('http://34.125.5.215:4000/login',{usuario:user,pass:passw});
-        const tipo2 = await axios.post('http://34.125.5.215:4000/loginDatosUsuario',{usuario:user,pass:passw});
-        console.log(tipo2.data[0].Nombre_Rol)
-        if(tipo2.data[0].Nombre_Rol == "Administrador"){
-            window.location.href = '../admin-hotel-crear';
-        }
-        if (tipo == "1"){
-            if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Turista"){
-                window.alert("Bienvenido")
-                window.location.href = '../hotel-turista';
-            }else{
-                window.alert("Usuario/correo o password incorrectos")
-            }
-            
-        }else if (tipo == "2"){
-            if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Hotel"){
-                window.alert("Bienvenido")
-                window.location.href = '../creacion-hotel';
-            }else{
-                window.alert("Usuario/correo o password incorrectos")
-            }
-            
-        }else if (tipo == "3"){
-            if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Renta Auto"){
-                window.alert("Bienvenido")
-                window.location.href = '../hotel-turista';
-            }else{
-                window.alert("Usuario/correo o password incorrectos")
-            }
-            
-        }else if (tipo == "4"){
-            if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Aerolinea"){
-                window.alert("Bienvenido")
-                window.location.href = '../hotel-turista';
-            }else{
-                window.alert("Usuario/correo o password incorrectos")
-            } 
-        }
+  function seleccionado() {
+    // seleccion
+    var cod = document.getElementById("select").value;
+    setTipo(cod);
+  }
+
+  async function enviar() {
+    const res = await axios.post("http://34.125.5.215:4000/login", {
+      usuario: user,
+      pass: passw,
+    });
+    const tipo2 = await axios.post(
+      "http://34.125.5.215:4000/loginDatosUsuario",
+      { usuario: user, pass: passw }
+    );
+    console.log(tipo2.data[0].Nombre_Rol);
+    if (tipo2.data[0].Nombre_Rol == "Administrador") {
+      window.location.href = "../admin-hotel-crear";
+    }
+    if (tipo == "1") {
+      if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Turista") {
+        window.alert("Bienvenido");
+        window.location.href = "../hotel-turista";
+      } else {
+        window.alert("Usuario/correo o password incorrectos");
+      }
+    } else if (tipo == "2") {
+      if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Hotel") {
+        window.alert("Bienvenido");
+        window.location.href = "../hotel-registro-habitacion";
+      } else {
+        window.alert("Usuario/correo o password incorrectos");
+      }
+    } else if (tipo == "3") {
+      if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Renta Auto") {
+        window.alert("Bienvenido");
+        window.location.href = "../auto-registro-auto";
+      } else {
+        window.alert("Usuario/correo o password incorrectos");
+      }
+    } else if (tipo == "4") {
+      if (res.data == 1 && tipo2.data[0].Nombre_Rol == "Aerolinea") {
+        window.alert("Bienvenido");
+        window.location.href = "../hotel-turista";
+      } else {
+        window.alert("Usuario/correo o password incorrectos");
+      }
     }
   }
 

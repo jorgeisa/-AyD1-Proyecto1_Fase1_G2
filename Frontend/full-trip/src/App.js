@@ -19,8 +19,10 @@ import Registro_Turista from "./component/Registro_Turista";
 import Registro_Servicio from "./component/Registro_Servicio";
 import Renta from "./component/renta";
 import Vuelo from "./component/vuelos";
+
 import Hotel_Registro_Habitacion from "./component/Hotel_Registro_Habitacion";
 import Auto_Registro_Auto from "./component/Auto_Registro_Auto";
+import Vuelo_Registro_Vuelo from "./component/Vuelo_Registro_Vuelo";
 
 function App() {
   return (
@@ -46,15 +48,11 @@ function App() {
         <Route exact path ="/creacion-hotel" component={Creacion_Hotel}></Route>
         <Route exact path="/registro-turista" component={Registro_Turista}></Route>
         <Route exact path="/registro-servicio" component={Registro_Servicio}></Route>
-        <Route
-          exact path="/auto-registro-auto"
-          component={Auto_Registro_Auto}
-        />
-        <Route
-          exact
-          path="/hotel-registro-habitacion"
-          component={Hotel_Registro_Habitacion}
-        />
+
+        <Route exact path="/auto-registro-auto" component={Auto_Registro_Auto}/>
+        <Route exact path="/hotel-registro-habitacion" component={Hotel_Registro_Habitacion}/>
+        <Route exact path="/vuelo-registro-vuelo" component={Vuelo_Registro_Vuelo}/>
+        
       </div>
     </main>
   );
