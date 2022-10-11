@@ -28,7 +28,7 @@ export default function Registro_Turista() {
 
   return (
     <div className="max-w-md max-h-full mx-auto">
-      {console.log(
+      {/*console.log(
         usuarioTurista +
           "-" +
           correoTurista +
@@ -42,7 +42,7 @@ export default function Registro_Turista() {
           paisTurista +
           "-" +
           ciudadTurista
-      )}
+      )*/}
       <br />
       <form
         className="bg-slate-800 py-10 rounded-md"
