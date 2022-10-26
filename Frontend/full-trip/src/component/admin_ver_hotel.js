@@ -1,10 +1,6 @@
-import React, { Component, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/esm/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";

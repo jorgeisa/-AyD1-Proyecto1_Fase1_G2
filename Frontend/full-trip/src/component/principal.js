@@ -1,10 +1,12 @@
-import React, { Component, useEffect, useReducer, useState } from "react";
+import React, { useState } from "react";
 
-//imagenes
+/*
+imagenes
 import hotel from "../img/hotel.jpg";
 import auto from "../img/autos.jpg";
 import vuelo from "../img/vuelo.jpg";
 import rese from "../img/resena.jpg";
+*/
 //disenio
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";

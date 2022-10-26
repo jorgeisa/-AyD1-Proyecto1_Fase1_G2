@@ -1,5 +1,3 @@
-// import React, { Component, useEffect, useState } from "react";
-
 export default function Navbar_Vuelo({ user }) {
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

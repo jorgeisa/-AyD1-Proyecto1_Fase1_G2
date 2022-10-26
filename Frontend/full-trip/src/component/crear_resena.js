@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/esm/Container";

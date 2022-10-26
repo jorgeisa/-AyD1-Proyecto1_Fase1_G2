@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/esm/Container';
@@ -45,12 +45,12 @@ export default function Vuelo() {
     newDiv.innerHTML = ""
 
     var cod = document.getElementById("select").value;
-    if (cod == "1") {
+    if (cod === "1") {
         const res = await axios.post('http://34.125.5.215:4000/busquedaPorDestino', {
             destino: bdestino
         });
 
-        var newDiv = document.getElementById("tx")
+        //var newDiv = document.getElementById("tx");
 
         for (var i = 0; i < res.data.Destino.length; i++) {
             newDiv.innerHTML += 'Usuario: ' + res.data.Destino[i].Usuario;
@@ -73,32 +73,32 @@ export default function Vuelo() {
             newDiv.innerHTML += '\n';
             newDiv.innerHTML += '\n';
         }
-    } else if (cod == "2") {
+    } else if (cod === "2") {
         const res = await axios.post('http://34.125.5.215:4000/busquedaVueloPorPrecio', {
             precio_menor: bpreme,
             precio_mayor: bprema
         });
-        console.log(res.data)
-        var newDiv = document.getElementById("tx")
+        console.log(res.data);
+        //var newDiv = document.getElementById("tx");
 
-        for (var i = 0; i < res.data.Precios.length; i++) {
-            newDiv.innerHTML += 'Nombre Local: ' + res.data.Precios[i].Usuario;
+        for (var j = 0; j < res.data.Precios.length; j++) {
+            newDiv.innerHTML += 'Nombre Local: ' + res.data.Precios[j].Usuario;
             newDiv.innerHTML += '\n';
-            newDiv.innerHTML += 'Pais: ' + res.data.Precios[i].Pais;
+            newDiv.innerHTML += 'Pais: ' + res.data.Precios[j].Pais;
             newDiv.innerHTML += '\n';
-            newDiv.innerHTML += 'Cuidad: ' + res.data.Precios[i].CIudad;
+            newDiv.innerHTML += 'Cuidad: ' + res.data.Precios[JSON].CIudad;
             newDiv.innerHTML += '\n';
-            newDiv.innerHTML += 'Correo Electronico: ' + res.data.Precios[i].Correo_Electronico;
+            newDiv.innerHTML += 'Correo Electronico: ' + res.data.Precios[j].Correo_Electronico;
             newDiv.innerHTML += '\n';
-            newDiv.innerHTML += 'Numero de vuelo: ' + res.data.Precios[i].Id_Vuelo;
+            newDiv.innerHTML += 'Numero de vuelo: ' + res.data.Precios[j].Id_Vuelo;
             newDiv.innerHTML += '\n';
-            newDiv.innerHTML += 'Fecha de Vuelo: ' + res.data.Precios[i].Fecha_Vuelo;
+            newDiv.innerHTML += 'Fecha de Vuelo: ' + res.data.Precios[j].Fecha_Vuelo;
             newDiv.innerHTML += '\n';
-            newDiv.innerHTML += 'Destino: ' + res.data.Precios[i].Destino;
+            newDiv.innerHTML += 'Destino: ' + res.data.Precios[j].Destino;
             newDiv.innerHTML += '\n';
-            newDiv.innerHTML += 'Cantidad Asientos: ' + res.data.Precios[i].Cantidad_Asientos;
+            newDiv.innerHTML += 'Cantidad Asientos: ' + res.data.Precios[j].Cantidad_Asientos;
             newDiv.innerHTML += '\n';
-            newDiv.innerHTML += 'Precio: ' + res.data.Precios[i].Precio;
+            newDiv.innerHTML += 'Precio: ' + res.data.Precios[j].Precio;
             newDiv.innerHTML += '\n';
             newDiv.innerHTML += '\n';
         }
@@ -111,10 +111,10 @@ export default function Vuelo() {
         var newDiv = document.getElementById("tx")
         newDiv.innerHTML = ""
         var cod = document.getElementById("select").value;
-        var tipo = document.getElementById("select2").value;
+        //var tipo = document.getElementById("select2").value;
         console.log(cod)
        
-        if (cod == "1") {
+        if (cod === "1") {
             document.getElementById("a0").style.display = '';
             document.getElementById("a1").style.display = '';
 
@@ -126,7 +126,7 @@ export default function Vuelo() {
 
             document.getElementById("bu").style.display= ''; 
             document.getElementById("tx").style.display= ''; 
-        }else if (cod == "2"){
+        }else if (cod === "2"){
             document.getElementById("a0").style.display = 'none';
             document.getElementById("a1").style.display = 'none';
             //precio 
