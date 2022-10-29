@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useState } from "react";
 import Navbar_Vuelo from "./NavbarVuelo";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
@@ -26,7 +26,7 @@ export default function Vuelo_Registro_Vuelo(props) {
 
   return (
     <div>
-      <Navbar_Vuelo user={props.params.user}  />
+      <Navbar_Vuelo user={props.params.user}></Navbar_Vuelo>
       <h3 className="mt-6" style={{color: "white"}}>Bienvenido {props.params.user}</h3>
       <div className="max-w-md max-h-full mx-auto">
         <br />

@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState, useContext } from "react";
+import React, { useState } from "react";
 import {hashHistory} from 'react';
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,12 +25,12 @@ export default function Login() {
 
   async function enviar() {
    // window.location.href = "../hotel-registro-habitacion/usuarioXD";
-    const res = await axios.post("http://34.125.5.215:4000/login", {
+    const res = await axios.post("http://34.125.166.15:4000/login", {
       usuario: user,
       pass: passw,
     });
     const tipo2 = await axios.post(
-      "http://34.125.5.215:4000/loginDatosUsuario",
+      "http://34.125.166.15:4000/loginDatosUsuario",
       { usuario: user, pass: passw }
     );
     console.log(tipo2.data[0].Nombre_Rol);

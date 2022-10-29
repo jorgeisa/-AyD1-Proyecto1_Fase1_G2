@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/esm/Container';
@@ -45,12 +45,11 @@ export default function Reservacion() {
       newDiv.innerHTML = ""
       
       var cod = document.getElementById("select").value;
-      if (cod == "1") {
+      if (cod === "1") {
         const pais = await axios.post('http://localhost:3000/busquedaPorPais', {
           pais: bpais
         });
         console.log(pais.data)
-        var newDiv = document.getElementById("tx")
 
         for (var i = 0; i < pais.data.Hoteles.length; i++) {
           newDiv.innerHTML += 'Nombre Hotel: ' + pais.data.Hoteles[i].Nombre_Completo;
@@ -65,90 +64,82 @@ export default function Reservacion() {
           newDiv.innerHTML += '\n';
           newDiv.innerHTML += '\n';
         }
-      } else if (cod == "2") {
+      } else if (cod === "2") {
         const pais = await axios.post('http://localhost:3000/busquedaPorCiudad', {
           ciudad: bciudad
         });
         console.log(pais.data)
-        var newDiv = document.getElementById("tx")
 
-        for (var i = 0; i < pais.data.Hoteles.length; i++) {
-          newDiv.innerHTML += 'Nombre Hotel: ' + pais.data.Hoteles[i].Nombre_Completo;
+        for (var j = 0; j < pais.data.Hoteles.length; j++) {
+          newDiv.innerHTML += 'Nombre Hotel: ' + pais.data.Hoteles[j].Nombre_Completo;
           newDiv.innerHTML += '\n';
-          newDiv.innerHTML += 'Pais: ' + pais.data.Hoteles[i].Pais;
+          newDiv.innerHTML += 'Pais: ' + pais.data.Hoteles[j].Pais;
           newDiv.innerHTML += '\n';
-          newDiv.innerHTML += 'Cuidad: ' + pais.data.Hoteles[i].Ciudad;
+          newDiv.innerHTML += 'Cuidad: ' + pais.data.Hoteles[j].Ciudad;
           newDiv.innerHTML += '\n';
-          newDiv.innerHTML += 'Correo_Electronico: ' + pais.data.Hoteles[i].Correo_Electronico;
+          newDiv.innerHTML += 'Correo_Electronico: ' + pais.data.Hoteles[j].Correo_Electronico;
           newDiv.innerHTML += '\n';
-          newDiv.innerHTML += 'Habitaciones Disponibles: ' + pais.data.Hoteles[i].Habitaciones_Disponibles;
+          newDiv.innerHTML += 'Habitaciones Disponibles: ' + pais.data.Hoteles[j].Habitaciones_Disponibles;
           newDiv.innerHTML += '\n';
           newDiv.innerHTML += '\n';
         }
-      } else if (cod == "3") {
+      } else if (cod === "3") {
         const pais = await axios.post('http://localhost:3000/busquedaPorHabitacion', {
         Cantidad_Personas: bcant
       });
-      console.log(pais.data)
-      var newDiv = document.getElementById("tx")
 
-      for (var i = 0; i < pais.data.Cantidad_Personas.length; i++) {
-        newDiv.innerHTML += 'Nombre Hotel: ' + pais.data.Cantidad_Personas[i].Usuario;
+      for (var k = 0; k < pais.data.Cantidad_Personas.length; k++) {
+        newDiv.innerHTML += 'Nombre Hotel: ' + pais.data.Cantidad_Personas[k].Usuario;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Pais: ' + pais.data.Cantidad_Personas[i].Pais;
+        newDiv.innerHTML += 'Pais: ' + pais.data.Cantidad_Personas[k].Pais;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Cuidad: ' + pais.data.Cantidad_Personas[i].CIudad;
+        newDiv.innerHTML += 'Cuidad: ' + pais.data.Cantidad_Personas[k].CIudad;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Correo Electronico: ' + pais.data.Cantidad_Personas[i].Correo_Electronico;
+        newDiv.innerHTML += 'Correo Electronico: ' + pais.data.Cantidad_Personas[k].Correo_Electronico;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Nombre Habitacion: ' + pais.data.Cantidad_Personas[i].Nombre_Habitacion;
+        newDiv.innerHTML += 'Nombre Habitacion: ' + pais.data.Cantidad_Personas[k].Nombre_Habitacion;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Precio: ' + pais.data.Cantidad_Personas[i].Precio;
+        newDiv.innerHTML += 'Precio: ' + pais.data.Cantidad_Personas[k].Precio;
         newDiv.innerHTML += '\n';
         newDiv.innerHTML += '\n';
-      }} else if (cod == "4") {
+      }} else if (cod === "4") {
         const pais = await axios.post('http://localhost:3000/busquedaPorPrecio', {
           precio_menor: bpreme,
           precio_mayor: bprema
       });
-      console.log(pais.data)
-      var newDiv = document.getElementById("tx")
-
-      for (var i = 0; i < pais.data.Precios.length; i++) {
-        newDiv.innerHTML += 'Nombre Hotel: ' + pais.data.Precios[i].Usuario;
+      for (var l = 0; l < pais.data.Precios.length; l++) {
+        newDiv.innerHTML += 'Nombre Hotel: ' + pais.data.Precios[l].Usuario;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Pais: ' + pais.data.Precios[i].Pais;
+        newDiv.innerHTML += 'Pais: ' + pais.data.Precios[l].Pais;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Cuidad: ' + pais.data.Precios[i].CIudad;
+        newDiv.innerHTML += 'Cuidad: ' + pais.data.Precios[l].CIudad;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Correo Electronico: ' + pais.data.Precios[i].Correo_Electronico;
+        newDiv.innerHTML += 'Correo Electronico: ' + pais.data.Precios[l].Correo_Electronico;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Nombre Habitacion: ' + pais.data.Precios[i].Nombre_Habitacion;
+        newDiv.innerHTML += 'Nombre Habitacion: ' + pais.data.Precios[l].Nombre_Habitacion;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Precio: ' + pais.data.Precios[i].Precio;
+        newDiv.innerHTML += 'Precio: ' + pais.data.Precios[l].Precio;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Cantidad Habitaciones: ' + pais.data.Precios[i].Cantidad_Personas;
+        newDiv.innerHTML += 'Cantidad Habitaciones: ' + pais.data.Precios[l].Cantidad_Personas;
         newDiv.innerHTML += '\n';
         newDiv.innerHTML += '\n';
-      }} else if (cod == "5") {
+      }} else if (cod === "5") {
         const pais = await axios.get('http://localhost:3000/busquedaPorFecha');
-      console.log(pais.data)
-      var newDiv = document.getElementById("tx")
 
-      for (var i = 0; i < pais.data.Hoteles.length; i++) {
-        newDiv.innerHTML += 'Nombre Hotel: ' + pais.data.Hoteles[i].Usuario;
+      for (var m = 0; m < pais.data.Hoteles.length; m++) {
+        newDiv.innerHTML += 'Nombre Hotel: ' + pais.data.Hoteles[m].Usuario;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Pais: ' + pais.data.Hoteles[i].Pais;
+        newDiv.innerHTML += 'Pais: ' + pais.data.Hoteles[m].Pais;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Cuidad: ' + pais.data.Hoteles[i].CIudad;
+        newDiv.innerHTML += 'Cuidad: ' + pais.data.Hoteles[m].CIudad;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Correo Electronico: ' + pais.data.Hoteles[i].Correo_Electronico;
+        newDiv.innerHTML += 'Correo Electronico: ' + pais.data.Hoteles[m].Correo_Electronico;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Nombre Habitacion: ' + pais.data.Hoteles[i].Nombre_Habitacion;
+        newDiv.innerHTML += 'Nombre Habitacion: ' + pais.data.Hoteles[m].Nombre_Habitacion;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Precio: ' + pais.data.Hoteles[i].Precio;
+        newDiv.innerHTML += 'Precio: ' + pais.data.Hoteles[m].Precio;
         newDiv.innerHTML += '\n';
-        newDiv.innerHTML += 'Cantidad Habitaciones: ' + pais.data.Hoteles[i].Cantidad_Personas;
+        newDiv.innerHTML += 'Cantidad Habitaciones: ' + pais.data.Hoteles[m].Cantidad_Personas;
         newDiv.innerHTML += '\n';
         newDiv.innerHTML += '\n';
       }}
@@ -158,10 +149,9 @@ export default function Reservacion() {
     function seleccionado(){
 
         var cod = document.getElementById("select").value;
-        console.log(cod)
         var newDiv = document.getElementById("tx")
         newDiv.innerHTML = ""
-        if (cod == "1") {
+        if (cod === "1") {
             document.getElementById("a0").style.display = '';
             document.getElementById("a1").style.display = '';
             //Ciudad
@@ -178,7 +168,7 @@ export default function Reservacion() {
 
             document.getElementById("bu").style.display= ''; 
             document.getElementById("tx").style.display= ''; 
-        }else if (cod == "2"){
+        }else if (cod === "2"){
             document.getElementById("a0").style.display = 'none';
             document.getElementById("a1").style.display = 'none';
             //Ciudad
@@ -195,7 +185,7 @@ export default function Reservacion() {
 
             document.getElementById("bu").style.display= ''; 
             document.getElementById("tx").style.display= ''; 
-        }else if (cod == "3"){
+        }else if (cod === "3"){
             document.getElementById("a0").style.display = 'none';
             document.getElementById("a1").style.display = 'none';
             //Ciudad
@@ -212,7 +202,7 @@ export default function Reservacion() {
 
             document.getElementById("bu").style.display= ''; 
             document.getElementById("tx").style.display= ''; 
-        }else if (cod == "4"){
+        }else if (cod === "4"){
             document.getElementById("a0").style.display = 'none';
             document.getElementById("a1").style.display = 'none';
             //Ciudad
@@ -229,7 +219,7 @@ export default function Reservacion() {
 
             document.getElementById("bu").style.display= ''; 
             document.getElementById("tx").style.display= ''; 
-        }else if (cod == "5"){
+        }else if (cod === "5"){
             document.getElementById("a0").style.display = 'none';
             document.getElementById("a1").style.display = 'none';
             //Ciudad

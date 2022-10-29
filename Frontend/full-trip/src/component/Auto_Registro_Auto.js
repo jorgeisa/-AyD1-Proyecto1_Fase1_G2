@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import Navbar_Auto from "./Navbar_Auto";

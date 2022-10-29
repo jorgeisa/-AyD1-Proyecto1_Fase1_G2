@@ -1,10 +1,8 @@
-// import React, { Component, useEffect, useState } from "react";
-
 export default function Navbar_Auto({ user }) {
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="./">
           Full Trip - {user}
         </a>
         <button
@@ -30,7 +28,7 @@ export default function Navbar_Auto({ user }) {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="./">
                 Mostrar Automoviles
               </a>
             </li>
